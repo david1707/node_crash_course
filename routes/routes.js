@@ -1,16 +1,20 @@
+const path = require("path");
+
 const express = require("express");
 const router = express.Router();
 
+const root_path = require("../root_path");
+
 router.get("/", (req, res, next) => {
-  res.send("<h1> Welcome home!!!!!!!!!!!! </h1>");
+  res.sendFile(path.join(root_path, "views", "home.html"));
 });
 
 router.get("/create-memory", (req, res, next) => {
-  res.send("<h1> Create a new memory!!!!</h1>");
+  res.sendFile(path.join(root_path, "views", "create_memory.html"));
 });
 
 router.get("*", (req, res, next) => {
-  res.send("<h1> Error 404 - This route does not exist");
+  res.sendFile(path.join(root_path, "views", "404.html"));
 });
 
 module.exports = router;
