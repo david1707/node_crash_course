@@ -3,12 +3,8 @@ const express = require("express");
 const app = express();
 
 // Routes
-app.use("/create-memory", (req, res, next) => {
-  res.send("<h1> Create a new memory</h1>");
-});
+const mainRoutes = require("./routes/routes");
 
-app.use("/", (req, res, next) => {
-  res.send("<h1> Hello, welcome to home</h1>");
-});
+app.use(mainRoutes);
 
 app.listen(3000);
