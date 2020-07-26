@@ -8,9 +8,16 @@
   <body>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/create-memory">Create Memory</a></li>
+      <li><a href="/memory/create-memory">Create Memory</a></li>
       <li><a href="/404">404</a></li>
     </ul>
-    <h1>Create a new memory!!!!</h1>
+    <h1>Create a new memory!</h1>
+    <form action="/memory/create-memory" method="POST">
+      <label for="cityName">City name</label>
+      <input type="text" id="cityName" name="cityName" />
+      <label for="imageURL">Image URL</label>
+      <input type="text" id="imageURL" name="imageURL" />
+      <button type="submit">Create Memory</button>
+    </form>
   </body>
 </html>
